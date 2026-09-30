@@ -1,0 +1,15 @@
+/* from pg 652, chp 13, vol2 of Tsang */
+#define maxgen 5
+
+#define d1 120.00    /* average divergence angle 1 */
+#define a 22.5      /* average branching angle */
+#define lr 1.2      /* avg length increase rate */
+#define vr 1.2      /* avg width increase rate */
+#define le 12       /* avg initial length */
+#define width 1.2   /* base initial width */
+
+START : !(width*(0.9+0.1*rand(2))) F(20*(0.9+0.1*rand(2))) /(180+rand(180)) A
+
+p1 : A -> !(width*(0.9+0.1*rand(2))) [&(a-7.5+rand(15)) F(le*(0.9+0.1*rand(2))) A] /(d1-20+rand(40)) [&(a-7.5+rand(15)) F(le*(0.9+0.1*rand(2))) A] /(d1-20+rand(40)) [&(a-7.5+rand(15)) F(le*(0.9+0.1*rand(2))) A]
+p2 : F(l) -> F(l*lr*(0.9+0.1*rand(2)))
+p3 : !(w) -> !(w*vr*(0.9+0.1*rand(2)))
