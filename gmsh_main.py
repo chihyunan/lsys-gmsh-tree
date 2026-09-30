@@ -25,12 +25,12 @@ CONFIG = {
     "TREE_INPUT_DIR": "Tree_inputs",
     "TREE_NAME": "2.3ternary_A",
 
-    "BRANCH_SCALE": 100, #50
-    "RADIUS_SCALE": 50, #30
-    "OVERLAP": 0.05,
+    "BRANCH_SCALE": 50, #default 50
+    "RADIUS_SCALE": 30, #default 30
+    "OVERLAP": 0.05, #small enough to avoid HFSS clash 
 
-    "LEAF_SCALE": 100, #should be same as branch
-    "LEAVES_PER_TIP": 50, #multiply by #of terminal branches to get leaf count 
+    "LEAF_SCALE": 50, #should be same as branch
+    "LEAVES_PER_TIP": 20, #multiply by #of terminal branches to get leaf count 
     "LEAF_RADIUS": 27.1, #mm
 
     "FREQUENCY": "1.26GHz",  # drives lambda/10 FE-BI padding in gmsh_to_febi.py
